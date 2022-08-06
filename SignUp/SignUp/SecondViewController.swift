@@ -26,11 +26,14 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         UserInformation.shared.password = pwField.text
     }
     
-    
-    
-    @IBAction func touchUpSelectImageButton(_ sender: UIButton) {
+    @IBAction func tapGestureRecognizer(_ sender: Any) {
         self.present(self.imagePicker, animated: true, completion: nil)
+
     }
+    
+//    @IBAction func touchUpSelectImageButton(_ sender: UIButton) {
+//        self.present(self.imagePicker, animated: true, completion: nil)
+//    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
