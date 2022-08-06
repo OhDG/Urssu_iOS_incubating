@@ -177,6 +177,8 @@
                     <connections>
                         <outlet property="idField" destination="MXY-gV-GVP" id="RJc-bd-umk"/>
                         <outlet property="imageView" destination="lr8-GF-h5D" id="wE6-DP-cls"/>
+                        <outlet property="introField" destination="BoO-Xz-PT4" id="ULG-Z0-t7v"/>
+                        <outlet property="nextButton" destination="s1Q-1W-iIx" id="ZoF-0i-r4U"/>
                         <outlet property="pwField" destination="1yB-Zb-Go3" id="ZXs-zA-2V0"/>
                     </connections>
                 </viewController>

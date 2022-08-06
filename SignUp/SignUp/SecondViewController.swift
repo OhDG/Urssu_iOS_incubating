@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SecondViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     lazy var imagePicker: UIImagePickerController = {
         let picker: UIImagePickerController = UIImagePickerController()
@@ -17,14 +17,52 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     } ()
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var idField: UITextField!
     @IBOutlet weak var pwField: UITextField!
+    @IBOutlet weak var introField: UITextView!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var compareBtn1: Bool!
+    var compareBtn2: Bool!
+    
+    
     
     @IBAction func touchUpNext(_ sender: UIButton) {
         UserInformation.shared.id = idField.text
         UserInformation.shared.password = pwField.text
     }
+    
+    func completionBtn() {
+        if compareBtn1 && compareBtn2 == true {
+            nextButton.isEnabled = true
+        } else {
+            nextButton.isEnabled = false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if ( idField.text?.isEmpty == false ) && ( pwField.text?.isEmpty == false ) == true {
+            self.compareBtn1 = true
+            completionBtn()
+        } else {
+            self.compareBtn1 = false
+            completionBtn()
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if introField.text.isEmpty {
+            self.compareBtn2 = false
+            completionBtn()
+        } else {
+            self.compareBtn2 = true
+            completionBtn()
+        }
+    }
+      
+
+    
+    
     
     @IBAction func tapGestureRecognizer(_ sender: Any) {
         self.present(self.imagePicker, animated: true, completion: nil)
@@ -51,8 +89,12 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     
 
     override func viewDidLoad() {
+        
+        self.nextButton.isEnabled = false
+        self.idField.delegate = self
+        self.pwField.delegate = self
+        self.introField.delegate = self
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
