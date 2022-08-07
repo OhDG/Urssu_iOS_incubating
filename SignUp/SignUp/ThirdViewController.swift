@@ -11,6 +11,11 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var pnumFeild: UITextField!
+    
+    
+    
+    
     
     let dateFormatter: DateFormatter = {
         let formatter: DateFormatter = DateFormatter()
@@ -28,6 +33,8 @@ class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        pnumFeild.text = UserInformation.shared.pnum
+        dateLabel.text = UserInformation.shared.birth
 
         // Do any additional setup after loading the view.
     }
@@ -35,10 +42,16 @@ class ThirdViewController: UIViewController {
 
     @IBAction func popToPrev() {
         self.navigationController?.popViewController(animated: true)
+        UserInformation.shared.pnum = pnumFeild.text
+        UserInformation.shared.birth = dateLabel.text
     }
     
     @IBAction func popToRoot() {
         self.navigationController?.popToRootViewController(animated: true)
+        UserInformation.shared.id = nil
+        UserInformation.shared.password = nil
+        UserInformation.shared.pnum = nil
+        UserInformation.shared.birth = nil
     }
     
     @IBAction func popToRootJoin() {
