@@ -297,7 +297,8 @@
                     <connections>
                         <outlet property="dateLabel" destination="LdF-Ug-3zO" id="EFQ-KX-Oib"/>
                         <outlet property="datePicker" destination="93o-OL-SB1" id="omA-1k-Uos"/>
-                        <outlet property="pnumFeild" destination="sI4-KK-GJ2" id="zXP-tG-e7D"/>
+                        <outlet property="joinBtn" destination="qs0-Ua-xhs" id="ox5-07-Q8X"/>
+                        <outlet property="pnumField" destination="sI4-KK-GJ2" id="Idg-8l-6Cw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wW-et-tlJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

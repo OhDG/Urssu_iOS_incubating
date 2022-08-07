@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var pnumFeild: UITextField!
-    
+    @IBOutlet weak var pnumField: UITextField!
+    @IBOutlet weak var joinBtn: UIButton!
     
     
     
@@ -33,16 +33,31 @@ class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pnumFeild.text = UserInformation.shared.pnum
+        pnumField.text = UserInformation.shared.pnum
         dateLabel.text = UserInformation.shared.birth
-
+        self.joinBtn.isEnabled = false
+        self.pnumField.delegate = self
         // Do any additional setup after loading the view.
     }
     
 
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if ( pnumField.text?.isEmpty == false ) && ( dateLabel.text?.isEmpty == false ) == true {
+            self.joinBtn.isEnabled = true
+        } else {
+            self.joinBtn.isEnabled = false
+        }
+    }
+    
+    
+    
+    
+    
+    
     @IBAction func popToPrev() {
         self.navigationController?.popViewController(animated: true)
-        UserInformation.shared.pnum = pnumFeild.text
+        UserInformation.shared.pnum = pnumField.text
         UserInformation.shared.birth = dateLabel.text
     }
     
