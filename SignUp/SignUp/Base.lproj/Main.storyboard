@@ -55,16 +55,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M8o-13-BPd" secondAttribute="trailing" constant="50" id="2hT-tG-6x5"/>
                             <constraint firstItem="KYH-Xm-iRD" firstAttribute="top" secondItem="M8o-13-BPd" secondAttribute="bottom" constant="20" id="9ES-6n-CWk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KYH-Xm-iRD" secondAttribute="bottom" constant="595" id="AgA-JF-UcQ"/>
                             <constraint firstItem="KYH-Xm-iRD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="B0m-pT-X7u"/>
-                            <constraint firstItem="M8o-13-BPd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ew0-1R-Rxl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KYH-Xm-iRD" secondAttribute="trailing" constant="100" id="chi-47-XE6"/>
-                            <constraint firstItem="M8o-13-BPd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="dWY-Ou-NJz"/>
-                            <constraint firstItem="KYH-Xm-iRD" firstAttribute="top" secondItem="M8o-13-BPd" secondAttribute="bottom" constant="50" id="e81-BZ-YXx"/>
-                            <constraint firstItem="KYH-Xm-iRD" firstAttribute="top" secondItem="M8o-13-BPd" secondAttribute="bottom" constant="20" id="eNY-dR-MqB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M8o-13-BPd" secondAttribute="trailing" constant="100" id="fxN-j3-TSZ"/>
                             <constraint firstItem="M8o-13-BPd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="p0Z-g7-aj0"/>
+                            <constraint firstItem="M8o-13-BPd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="tm2-I3-8eC"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OWW-eF-51R" appends="YES" id="CqP-sj-eW0"/>
@@ -210,36 +207,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-mM-FUn">
-                                <rect key="frame" x="20" y="202.5" width="59" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sI4-KK-GJ2">
                                 <rect key="frame" x="20" y="148.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="93o-OL-SB1">
-                                <rect key="frame" x="0.0" y="243" width="414" height="216"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cud-9a-nTl">
+                                <rect key="frame" x="20" y="202.5" width="374" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-mM-FUn">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdF-Ug-3zO">
+                                        <rect key="frame" x="59" y="0.0" width="315" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="93o-OL-SB1">
+                                <rect key="frame" x="0.0" y="272.5" width="414" height="216"/>
                                 <connections>
                                     <action selector="didDatePickerValueChanged:" destination="eiv-Fm-RaY" eventType="valueChanged" id="gYG-nZ-JiM"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdF-Ug-3zO">
-                                <rect key="frame" x="118" y="202.5" width="276" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="JAx-8f-IKo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRK-kK-btZ">
-                                <rect key="frame" x="50" y="479" width="314" height="31"/>
+                                <rect key="frame" x="50" y="508.5" width="314" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVq-VT-U7r">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVq-VT-U7r">
                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="31"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
@@ -248,7 +247,7 @@
                                             <action selector="popToRoot" destination="eiv-Fm-RaY" eventType="touchUpInside" id="PFc-FO-jd3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-wY-skK">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-wY-skK">
                                         <rect key="frame" x="104.5" y="0.0" width="105" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="이전"/>
@@ -271,20 +270,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="2Hw-uA-yXf" firstAttribute="trailing" secondItem="93o-OL-SB1" secondAttribute="trailing" id="4wD-ys-Olp"/>
                             <constraint firstItem="sI4-KK-GJ2" firstAttribute="top" secondItem="8bc-Ow-I4a" secondAttribute="bottom" constant="20" id="4wb-Fz-osq"/>
+                            <constraint firstItem="93o-OL-SB1" firstAttribute="centerX" secondItem="V1o-CE-9gu" secondAttribute="centerX" id="6of-xD-6uP"/>
                             <constraint firstItem="sI4-KK-GJ2" firstAttribute="leading" secondItem="2Hw-uA-yXf" secondAttribute="leading" constant="20" id="9OC-iY-75q"/>
                             <constraint firstItem="8bc-Ow-I4a" firstAttribute="leading" secondItem="2Hw-uA-yXf" secondAttribute="leading" constant="20" id="AKL-6X-Kyj"/>
+                            <constraint firstItem="2Hw-uA-yXf" firstAttribute="trailing" secondItem="8bc-Ow-I4a" secondAttribute="trailing" constant="335" id="HDb-9c-SiB"/>
+                            <constraint firstItem="93o-OL-SB1" firstAttribute="top" secondItem="Cud-9a-nTl" secondAttribute="bottom" constant="20" id="NkO-Dr-osS"/>
                             <constraint firstItem="8bc-Ow-I4a" firstAttribute="top" secondItem="2Hw-uA-yXf" secondAttribute="top" constant="20" id="OGe-f7-GLH"/>
-                            <constraint firstItem="LdF-Ug-3zO" firstAttribute="top" secondItem="sI4-KK-GJ2" secondAttribute="bottom" constant="20" id="Q9Z-kf-VFX"/>
+                            <constraint firstItem="Cud-9a-nTl" firstAttribute="top" secondItem="sI4-KK-GJ2" secondAttribute="bottom" constant="20" id="Sbt-S8-WJH"/>
                             <constraint firstItem="mRK-kK-btZ" firstAttribute="leading" secondItem="2Hw-uA-yXf" secondAttribute="leading" constant="50" id="ZKd-fC-ugy"/>
-                            <constraint firstItem="ObE-mM-FUn" firstAttribute="leading" secondItem="2Hw-uA-yXf" secondAttribute="leading" constant="20" id="agF-Xn-93z"/>
+                            <constraint firstItem="Cud-9a-nTl" firstAttribute="leading" secondItem="2Hw-uA-yXf" secondAttribute="leading" constant="20" id="aOq-aU-ORu"/>
                             <constraint firstItem="mRK-kK-btZ" firstAttribute="top" secondItem="93o-OL-SB1" secondAttribute="bottom" constant="20" id="ba8-hs-N3k"/>
                             <constraint firstItem="2Hw-uA-yXf" firstAttribute="trailing" secondItem="mRK-kK-btZ" secondAttribute="trailing" constant="50" id="ecz-Bw-1a9"/>
-                            <constraint firstItem="ObE-mM-FUn" firstAttribute="top" secondItem="sI4-KK-GJ2" secondAttribute="bottom" constant="20" id="id3-aq-8UJ"/>
                             <constraint firstItem="2Hw-uA-yXf" firstAttribute="trailing" secondItem="sI4-KK-GJ2" secondAttribute="trailing" constant="20" id="lwn-Yb-1fh"/>
-                            <constraint firstItem="LdF-Ug-3zO" firstAttribute="leading" secondItem="ObE-mM-FUn" secondAttribute="trailing" constant="20" id="mAm-by-xZi"/>
-                            <constraint firstItem="93o-OL-SB1" firstAttribute="top" secondItem="ObE-mM-FUn" secondAttribute="bottom" constant="20" id="vFX-E4-nOZ"/>
-                            <constraint firstItem="2Hw-uA-yXf" firstAttribute="trailing" secondItem="LdF-Ug-3zO" secondAttribute="trailing" constant="20" id="wlR-Qy-Ivz"/>
+                            <constraint firstItem="93o-OL-SB1" firstAttribute="leading" secondItem="2Hw-uA-yXf" secondAttribute="leading" id="pPj-xe-pWd"/>
+                            <constraint firstItem="2Hw-uA-yXf" firstAttribute="trailing" secondItem="Cud-9a-nTl" secondAttribute="trailing" constant="20" id="wuA-PK-Qel"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="MIf-wB-acI" appends="YES" id="ojh-uZ-1Cp"/>
