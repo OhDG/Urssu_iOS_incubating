@@ -21,15 +21,33 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var pwField: UITextField!
     @IBOutlet weak var introField: UITextView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var checkPwField: UITextField!
     
-    var compareBtn1: Bool!
-    var compareBtn2: Bool!
+    
+    var fillCheckBtn1: Bool = false
+    var fillCheckBtn2: Bool = false
+
+    var compareBtn1: Bool = false
+    var compareBtn2: Bool = false
     
     
     
     @IBAction func touchUpNext(_ sender: UIButton) {
         UserInformation.shared.id = idField.text
         UserInformation.shared.password = pwField.text
+    }
+    
+    
+    
+    
+    func checkingPassword() {
+        if ( fillCheckBtn1 == true ) && ( fillCheckBtn2 == true ) == true {
+            self.compareBtn1 = true
+            completionBtn()
+        } else {
+            self.compareBtn1 = false
+            completionBtn()
+        }
     }
     
     func completionBtn() {
@@ -40,15 +58,28 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+   
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if ( idField.text?.isEmpty == false ) && ( pwField.text?.isEmpty == false ) == true {
-            self.compareBtn1 = true
-            completionBtn()
+            self.fillCheckBtn1 = true
+            checkingPassword()
         } else {
-            self.compareBtn1 = false
-            completionBtn()
+            self.fillCheckBtn1 = false
+            checkingPassword()
+        }
+        
+        if ( pwField.text == checkPwField.text ) {
+            self.fillCheckBtn2 = true
+            checkingPassword()
+        } else {
+            self.fillCheckBtn2 = false
+            checkingPassword()
         }
     }
+    
+
+    
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if introField.text.isEmpty {
@@ -90,12 +121,14 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     override func viewDidLoad() {
         
+
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
         self.nextButton.isEnabled = false
         self.idField.delegate = self
         self.pwField.delegate = self
+        self.checkPwField.delegate = self
         self.introField.delegate = self
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func popToPrev() {

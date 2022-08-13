@@ -11,7 +11,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var pnumField: UITextField!
+    @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var joinBtn: UIButton!
     
     
@@ -33,17 +33,17 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pnumField.text = UserInformation.shared.pnum
+        phoneNumberField.text = UserInformation.shared.phoneNumber
         dateLabel.text = UserInformation.shared.birth
         self.joinBtn.isEnabled = false
-        self.pnumField.delegate = self
+        self.phoneNumberField.delegate = self
         // Do any additional setup after loading the view.
     }
     
 
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if ( pnumField.text?.isEmpty == false ) && ( dateLabel.text?.isEmpty == false ) == true {
+        if ( phoneNumberField.text?.isEmpty == false ) && ( dateLabel.text?.isEmpty == false ) == true {
             self.joinBtn.isEnabled = true
         } else {
             self.joinBtn.isEnabled = false
@@ -57,7 +57,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func popToPrev() {
         self.navigationController?.popViewController(animated: true)
-        UserInformation.shared.pnum = pnumField.text
+        UserInformation.shared.phoneNumber = phoneNumberField.text
         UserInformation.shared.birth = dateLabel.text
     }
     
@@ -65,7 +65,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.popToRootViewController(animated: true)
         UserInformation.shared.id = nil
         UserInformation.shared.password = nil
-        UserInformation.shared.pnum = nil
+        UserInformation.shared.phoneNumber = nil
         UserInformation.shared.birth = nil
     }
     

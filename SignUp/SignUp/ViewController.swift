@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    @IBOutlet var mainidField: UITextField!
+    @IBOutlet var mainIdField: UITextField!
     
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainidField.text = UserInformation.shared.id
+        mainIdField.text = UserInformation.shared.id
        }
 
 }
