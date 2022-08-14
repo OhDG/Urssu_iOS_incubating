@@ -12,7 +12,7 @@ class UserInformation {
     
     var id: String?
     var password: String?
-    var pnum: String?
+    var phoneNumber: String?
     var birth: String?
     
     
