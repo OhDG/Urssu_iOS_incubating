@@ -24,11 +24,11 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var checkPwField: UITextField!
     
     
-    var fillCheckBtn1: Bool = false
-    var fillCheckBtn2: Bool = false
+    var isPwFieldFilled1: Bool = false
+    var isPwFieldFilled2: Bool = false
 
-    var compareBtn1: Bool = false
-    var compareBtn2: Bool = false
+    var isBothPwFieldFilled: Bool = false
+    var isIntroFieldFilled: Bool = false
     
     
     
@@ -40,18 +40,17 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     
-    func checkingPassword() {
-        if ( fillCheckBtn1 == true ) && ( fillCheckBtn2 == true ) == true {
-            self.compareBtn1 = true
-            completionBtn()
+    func isPwFieldmatched() {
+        if isPwFieldFilled1 && isPwFieldFilled2 {
+            self.isBothPwFieldFilled = true
         } else {
-            self.compareBtn1 = false
-            completionBtn()
+            self.isBothPwFieldFilled = false
         }
+        completion()
     }
     
-    func completionBtn() {
-        if compareBtn1 && compareBtn2 == true {
+    func completion() {
+        if isBothPwFieldFilled && isIntroFieldFilled {
             nextButton.isEnabled = true
         } else {
             nextButton.isEnabled = false
@@ -62,19 +61,27 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if ( idField.text?.isEmpty == false ) && ( pwField.text?.isEmpty == false ) == true {
-            self.fillCheckBtn1 = true
-            checkingPassword()
+            self.isPwFieldFilled1 = true
         } else {
-            self.fillCheckBtn1 = false
-            checkingPassword()
+            self.isPwFieldFilled1 = false
         }
+        isPwFieldmatched()
         
         if ( pwField.text == checkPwField.text ) {
-            self.fillCheckBtn2 = true
-            checkingPassword()
+            self.isPwFieldFilled2 = true
         } else {
-            self.fillCheckBtn2 = false
-            checkingPassword()
+            self.isPwFieldFilled2 = false
+        }
+        isPwFieldmatched()
+        
+    }
+   
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
         }
     }
     
@@ -83,14 +90,20 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if introField.text.isEmpty {
-            self.compareBtn2 = false
-            completionBtn()
+            self.isIntroFieldFilled = false
         } else {
-            self.compareBtn2 = true
-            completionBtn()
+            self.isIntroFieldFilled = true
         }
+        completion()
+        
+        if textView.text.isEmpty {
+            textView.text = "자기소개를 입력하세요"
+            textView.textColor = UIColor.lightGray
+            }
     }
       
+    
+
 
     
     
@@ -124,11 +137,20 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        imageView.image = UIImage(named: "defaultImage")
         self.nextButton.isEnabled = false
         self.idField.delegate = self
         self.pwField.delegate = self
         self.checkPwField.delegate = self
         self.introField.delegate = self
+        
+        func textFieldPlaceHolderSetting() {
+            introField.text = "자기소개를 입력하세요"
+            introField.textColor = UIColor.lightGray
+        }
+        textFieldPlaceHolderSetting()
+        
+        
     }
 
     @IBAction func popToPrev() {
