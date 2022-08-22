@@ -17,6 +17,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    
     let dateFormatter: DateFormatter = {
         let formatter: DateFormatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
@@ -38,6 +39,15 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
         self.joinBtn.isEnabled = false
         self.phoneNumberField.delegate = self
         // Do any additional setup after loading the view.
+        
+        func printDateOnLabel() {
+            let defaultDate = DateFormatter()
+            defaultDate.dateFormat = "yyyy/MM/dd"
+            let currentDateString = defaultDate.string(from: Date())
+            dateLabel.text = currentDateString
+        }
+        
+        printDateOnLabel()
     }
     
 
