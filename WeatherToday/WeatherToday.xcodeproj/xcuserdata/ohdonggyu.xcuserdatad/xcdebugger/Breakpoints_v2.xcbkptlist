@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C85F6059-7EAA-4089-ABFB-01557EF6C83E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "028D9141-C8B8-465D-9D07-B5F67259ECE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherToday/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "028D9141-C8B8-465D-9D07-B5F67259ECE6 - d003bd0587cefd27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherToday.ViewController.flag.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "WeatherToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ohdonggyu/Documents/UrssuIncubating/WeatherToday/WeatherToday/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "028D9141-C8B8-465D-9D07-B5F67259ECE6 - f38be15e44502e47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherToday.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WeatherToday.ViewController"
+                  moduleName = "WeatherToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ohdonggyu/Documents/UrssuIncubating/WeatherToday/WeatherToday/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "028D9141-C8B8-465D-9D07-B5F67259ECE6 - 968b2e4e984778e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherToday.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WeatherToday.ViewController&gt;"
+                  moduleName = "WeatherToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ohdonggyu/Documents/UrssuIncubating/WeatherToday/WeatherToday/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD8031DA-32C6-4674-8E14-0D2363294E98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherToday/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DD8031DA-32C6-4674-8E14-0D2363294E98 - ff0150b7d98542c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherToday.ViewController.nation.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "WeatherToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ohdonggyu/Documents/UrssuIncubating/WeatherToday/WeatherToday/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "DD8031DA-32C6-4674-8E14-0D2363294E98 - f38be15e44502e66"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherToday.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WeatherToday.ViewController"
+                  moduleName = "WeatherToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ohdonggyu/Documents/UrssuIncubating/WeatherToday/WeatherToday/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "628">
+               </Location>
+               <Location
+                  uuid = "DD8031DA-32C6-4674-8E14-0D2363294E98 - 968b2e4e984778c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherToday.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WeatherToday.ViewController&gt;"
+                  moduleName = "WeatherToday"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ohdonggyu/Documents/UrssuIncubating/WeatherToday/WeatherToday/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "604">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "584427B4-4505-462A-BA2B-90896696B3EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherToday/SecondViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
