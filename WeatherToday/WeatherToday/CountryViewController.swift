@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CountryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     @IBOutlet weak var secondTableView: UITableView!
@@ -19,14 +19,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedCountry: String?
     
     
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        self.title = self.selectedCountry
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,23 +29,33 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch selectedCountry
         {
         case "독일":
-            decodingJsonDate(country: "de")
+            decodingJsonData(country: "de")
         case "프랑스":
-            decodingJsonDate(country: "fr")
+            decodingJsonData(country: "fr")
         case "이탈리아":
-            decodingJsonDate(country: "it")
+            decodingJsonData(country: "it")
         case "일본":
-            decodingJsonDate(country: "jp")
+            decodingJsonData(country: "jp")
         case "한국":
-            decodingJsonDate(country: "kr")
+            decodingJsonData(country: "kr")
         default:
-            decodingJsonDate(country: "us")
+            decodingJsonData(country: "us")
         }
         
         // Do any additional setup after loading the view.
     }
     
-    func decodingJsonDate(country: String) {
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.title = self.selectedCountry
+    }
+    
+    
+    
+    func decodingJsonData(country: String) {
         let jsonDecoder: JSONDecoder = JSONDecoder()
         guard let dataAsset: NSDataAsset = NSDataAsset(name: country) else {
             return
@@ -77,7 +79,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as! secondTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as! cityTableViewCell
 
         let city: City = self.cities[indexPath.row]
         
@@ -105,12 +107,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController: ThirdViewController =
-                segue.destination as? ThirdViewController else {
+        guard let nextViewController: CityViewController =
+                segue.destination as? CityViewController else {
             return
         }
         
-        guard let cell: secondTableViewCell = sender as? secondTableViewCell else {
+        guard let cell: cityTableViewCell = sender as? cityTableViewCell else {
             return
         }
         

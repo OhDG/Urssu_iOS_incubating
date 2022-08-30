@@ -1,19 +1,21 @@
 //
-//  firstTableViewCell.swift
+//  secondTableViewCell.swift
 //  WeatherToday
 //
-//  Created by 오동규 on 2022/08/25.
+//  Created by 오동규 on 2022/08/28.
 //
 
 import UIKit
 
-class firstTableViewCell: UITableViewCell {
-    
-    
-    
-    @IBOutlet var flagImageView : UIImageView!
-    @IBOutlet var nationLabel : UILabel!
+class cityTableViewCell: UITableViewCell {
 
+    @IBOutlet var weatherImageView: UIImageView!
+    @IBOutlet var cityLabel: UILabel!
+    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var probabilityOfRainfallLabel: UILabel!
+    
+    var weatherToday: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

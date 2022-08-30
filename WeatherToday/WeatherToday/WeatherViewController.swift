@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! firstTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! countryTableViewCell
          
         cell.flagImageView.image = UIImage(named: flag[indexPath.row])
         cell.nationLabel.text = nation[indexPath.row]
@@ -48,12 +48,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController: SecondViewController =
-                segue.destination as? SecondViewController else {
+        guard let nextViewController: CountryViewController =
+                segue.destination as? CountryViewController else {
             return
         }
         
-        guard let cell: firstTableViewCell = sender as? firstTableViewCell else {
+        guard let cell: countryTableViewCell = sender as? countryTableViewCell else {
             return
         }
         

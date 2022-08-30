@@ -11,7 +11,7 @@
         <!--세계 날씨-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="firstCell" textLabel="WV8-hA-086" imageView="M9W-Ye-AyC" rowHeight="47" style="IBUITableViewCellStyleDefault" id="zP1-bg-iDA" customClass="firstTableViewCell" customModule="WeatherToday" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="firstCell" textLabel="WV8-hA-086" imageView="M9W-Ye-AyC" rowHeight="47" style="IBUITableViewCellStyleDefault" id="zP1-bg-iDA" customClass="countryTableViewCell" customModule="WeatherToday" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zP1-bg-iDA" id="CAI-eZ-L4S">
@@ -41,8 +41,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="flagImageView" destination="M9W-Ye-AyC" id="ROk-4N-kgi"/>
-                                            <outlet property="nationLabel" destination="WV8-hA-086" id="Pz2-cU-kZM"/>
+                                            <outlet property="flagImageView" destination="M9W-Ye-AyC" id="wSW-Tm-UAa"/>
+                                            <outlet property="nationLabel" destination="WV8-hA-086" id="g1t-co-VgD"/>
                                             <segue destination="zy7-HA-eS3" kind="show" id="F6L-a8-8sY"/>
                                         </connections>
                                     </tableViewCell>
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Country View Controller-->
         <scene sceneID="NF8-Rn-oIF">
             <objects>
-                <viewController id="zy7-HA-eS3" customClass="SecondViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zy7-HA-eS3" customClass="CountryViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rNH-gl-luu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="secondCell" rowHeight="100" id="d43-mi-mPu" customClass="secondTableViewCell" customModule="WeatherToday" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="secondCell" rowHeight="100" id="d43-mi-mPu" customClass="cityTableViewCell" customModule="WeatherToday" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d43-mi-mPu" id="A7P-0V-K8f">
@@ -122,10 +122,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cityLabel" destination="jh4-0H-p9i" id="ZhI-ZT-jU0"/>
-                                            <outlet property="probabilityOfRainfallLabel" destination="joF-zl-VG2" id="NpH-Wt-tSh"/>
-                                            <outlet property="tempLabel" destination="aCS-gc-Hw8" id="x6m-gO-Qvd"/>
-                                            <outlet property="weatherImageView" destination="Zt7-zb-bvp" id="P7P-7Q-2cM"/>
+                                            <outlet property="cityLabel" destination="jh4-0H-p9i" id="h6p-QO-YJ7"/>
+                                            <outlet property="probabilityOfRainfallLabel" destination="joF-zl-VG2" id="ocU-bc-koM"/>
+                                            <outlet property="tempLabel" destination="aCS-gc-Hw8" id="WWv-Ok-mpM"/>
+                                            <outlet property="weatherImageView" destination="Zt7-zb-bvp" id="zUg-fV-119"/>
                                             <segue destination="mX4-fS-iCF" kind="show" id="IOc-gv-Eoq"/>
                                         </connections>
                                     </tableViewCell>
@@ -143,17 +143,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="7y8-Nk-MjG"/>
                     <connections>
-                        <outlet property="secondTableView" destination="ePP-xs-hjx" id="aBJ-rK-K8E"/>
+                        <outlet property="secondTableView" destination="ePP-xs-hjx" id="IdS-2a-2Av"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzP-Iw-zDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1692.753623188406" y="93.75"/>
         </scene>
-        <!--Third View Controller-->
+        <!--City View Controller-->
         <scene sceneID="sBC-5o-Rfv">
             <objects>
-                <viewController id="mX4-fS-iCF" customClass="ThirdViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mX4-fS-iCF" customClass="CityViewController" customModule="WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JF5-td-BdJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,10 +196,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="HJk-AE-Ygz"/>
                     <connections>
-                        <outlet property="thirdProbabilityOfRainfallLabel" destination="hQR-3F-lck" id="YR1-lf-kr0"/>
-                        <outlet property="thirdTempLabel" destination="6WT-Bn-RsB" id="ZMH-oQ-4hu"/>
-                        <outlet property="thirdWeatherImageView" destination="QdP-X7-dyo" id="682-Il-H5P"/>
-                        <outlet property="thirdWeatherLabel" destination="dcA-v3-c1f" id="x7a-eE-C1p"/>
+                        <outlet property="thirdProbabilityOfRainfallLabel" destination="hQR-3F-lck" id="nHe-WU-Pn5"/>
+                        <outlet property="thirdTempLabel" destination="6WT-Bn-RsB" id="8ld-gG-XVX"/>
+                        <outlet property="thirdWeatherImageView" destination="QdP-X7-dyo" id="ubb-gT-BZe"/>
+                        <outlet property="thirdWeatherLabel" destination="dcA-v3-c1f" id="430-qF-q5v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJc-Zh-gFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

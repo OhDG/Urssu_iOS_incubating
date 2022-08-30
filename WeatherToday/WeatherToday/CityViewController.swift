@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class CityViewController: UIViewController {
 
     
     var selectedCity: String?
