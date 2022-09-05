@@ -22,13 +22,6 @@ class CityViewController: UIViewController {
     @IBOutlet var thirdTempLabel: UILabel!
     @IBOutlet var thirdProbabilityOfRainfallLabel: UILabel!
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.title = self.selectedCity
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +31,14 @@ class CityViewController: UIViewController {
         thirdWeatherLabel.text = selectedWeatherToday
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = self.selectedCity
+    }
+    
+   
         // Do any additional setup after loading the view.
     }
     
