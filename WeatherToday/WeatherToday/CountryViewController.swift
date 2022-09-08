@@ -90,7 +90,9 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as! cityTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as? cityTableViewCell else {
+            return UITableViewCell()
+        }
 
         let city: City = self.cities[indexPath.row]
         
@@ -124,8 +126,10 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.probabilityOfRainfallLabel?.text = "강수확률 \(city.rainfall_probability)%"
 
          return cell
-        
-
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

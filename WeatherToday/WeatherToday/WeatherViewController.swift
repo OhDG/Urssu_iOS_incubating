@@ -39,13 +39,20 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! countryTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as? countryTableViewCell else {
+            return UITableViewCell()
+        }
          
         cell.flagImageView.image = UIImage(named: flag[indexPath.row])
         cell.nationLabel.text = nation[indexPath.row]
          
          return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let nextViewController: CountryViewController =
