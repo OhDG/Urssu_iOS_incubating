@@ -26,20 +26,31 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.secondTableView.delegate = self
         self.secondTableView.dataSource = self
         
+        
+        
+        enum Country: String {
+            case 독일 = "de"
+            case 프랑스 = "fr"
+            case 이탈리아 = "it"
+            case 일본 = "jp"
+            case 한국 = "kr"
+            case 미국 = "us"
+        }
+        
         switch selectedCountry
         {
         case "독일":
-            decodingJsonData(country: "de")
+            decodingJsonData(Country.독일.rawValue)
         case "프랑스":
-            decodingJsonData(country: "fr")
+            decodingJsonData(Country.프랑스.rawValue)
         case "이탈리아":
-            decodingJsonData(country: "it")
+            decodingJsonData(Country.이탈리아.rawValue)
         case "일본":
-            decodingJsonData(country: "jp")
+            decodingJsonData(Country.일본.rawValue)
         case "한국":
-            decodingJsonData(country: "kr")
+            decodingJsonData(Country.한국.rawValue)
         default:
-            decodingJsonData(country: "us")
+            decodingJsonData(Country.미국.rawValue)
         }
         
         // Do any additional setup after loading the view.
@@ -55,7 +66,7 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     
-    func decodingJsonData(country: String) {
+    func decodingJsonData(_ country: String) {
         let jsonDecoder: JSONDecoder = JSONDecoder()
         guard let dataAsset: NSDataAsset = NSDataAsset(name: country) else {
             return
@@ -79,31 +90,46 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as! cityTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as? cityTableViewCell else {
+            return UITableViewCell()
+        }
 
         let city: City = self.cities[indexPath.row]
         
         
+        enum RainState: Int {
+            case clean = 0
+            case little = 30
+            case heavy = 60
+        }
+        
         switch city.rainfall_probability
         {
-        case 0...30:
+        case RainState.clean.rawValue...RainState.little.rawValue:
             cell.weatherImageView?.image = UIImage(named: "sunny")
             cell.weatherToday = "맑음"
-        case 31...60:
+        case (RainState.little.rawValue+1)...RainState.heavy.rawValue:
             cell.weatherImageView?.image = UIImage(named: "cloudy")
             cell.weatherToday = "흐림"
         default:
             cell.weatherImageView?.image = UIImage(named: "rainy")
             cell.weatherToday = "비"
+            cell.probabilityOfRainfallLabel.textColor = UIColor.orange
         }
-                
+        
+        
         cell.cityLabel?.text = city.city_name
         cell.tempLabel?.text = "섭씨 \(city.celsius)도 / 화씨 \(city.state)도"
+        if city.celsius <= 10 {
+            cell.tempLabel.textColor = UIColor.blue
+        }
         cell.probabilityOfRainfallLabel?.text = "강수확률 \(city.rainfall_probability)%"
 
          return cell
-        
-
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
