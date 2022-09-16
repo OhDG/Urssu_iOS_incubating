@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBAction func touchUpDownloadButton(_ sender: UIButton) {
         //https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg
         
-        let imageURL: URL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg")!
+        let imageURL: URL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/LARGE_elevation.jpg/1600px-LARGE_elevation.jpg?20060312070100")!
         
         
         OperationQueue().addOperation {
